@@ -13,16 +13,16 @@ AFRAME.registerComponent('seek-target', {
     },
   },
   init: function() {
-  	this.timeElapsed = 0;
+    this.timeElapsed = 0;
     this.DIRECTION_X = 0;
     this.DIRECTION_Z = 0;
   },
   tick: function(time, timeDelta) {
-  	this.timeElapsed += timeDelta;
-  	if (this.timeElapsed > this.data.updateDelta) {
-  		this.timeElapsed = 0;
+    this.timeElapsed += timeDelta;
+    if (this.timeElapsed > this.data.updateDelta) {
+      this.timeElapsed = 0;
       this.changePosition();
-  	}
+    }
   },
   changePosition: function() {
     this.DIRECTION_X = this.getDirectionX();
